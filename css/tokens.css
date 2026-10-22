@@ -1,0 +1,45 @@
+/*
+  tokens.css
+  ──────────
+  All design decisions live here.
+  Edit this file to update colors, fonts, or spacing across the entire site.
+  Never edit values directly in styles.css.
+
+  Color system: three-tier hierarchy encodes structural meaning, not decoration.
+    accent-1  Top-level section headers (About, Selected Work, Right Now)
+    accent-2  Nested headers (case titles, project title, hero identity line)
+    accent-3  Sub-headers and inline keywords (What I do, tags, keywords)
+    text      Body prose — always near-black, never colored
+    text-muted  Supporting labels, context lines, footer note
+*/
+
+:root {
+  /* Background */
+  --bg:           #FAFAF8;  /* warm paper white */
+  --card-bg:      #FFFFFF;
+
+  /* Text */
+  --text:         #1A1A1A;  /* near-black, 16.65:1 contrast on --bg */
+  --text-muted:   #6B6A64;  /* 5.19:1 contrast on --bg */
+  --hairline:     #E5E1D8;  /* borders, dividers */
+
+  /* Accent tiers — all pass WCAG AA (4.5:1) on --bg */
+  --accent-1:     #A8174A;  /* raspberry, primary    — 5.76:1 */
+  --accent-2:     #C2305C;  /* raspberry mid, secondary — 4.55:1 */
+  --accent-3:     #5C6225;  /* muted olive, tertiary  — 6.22:1 */
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-body:    'Karla', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:     8px;
+  --space-sm:     16px;
+  --space-md:     24px;
+  --space-lg:     48px;
+  --space-xl:     72px;
+
+  /* Layout */
+  --max-width:    900px;
+  --content-width: 680px;
+}

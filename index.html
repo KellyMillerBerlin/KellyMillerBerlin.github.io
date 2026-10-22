@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelly Marie Miller — Senior Technical Program Manager</title>
+  <meta name="description" content="Senior Technical Program Manager specializing in civic tech, climate, and education. Based in Portland, Oregon.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Design tokens (colors, fonts, spacing) — edit this to retheme -->
+  <link rel="stylesheet" href="css/tokens.css">
+
+  <!-- Component styles — do not edit for content changes -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="layout-wrap">
+
+  <!-- Main content -->
+  <div class="page">
+
+    <!-- Hero -->
+    <section id="top" class="hero">
+
+      <!-- Dot-connect animation -->
+      <div class="hero-visual-slot" aria-hidden="true">
+        <svg viewBox="0 0 160 150" fill="none" id="sketch-svg">
+          <path id="sketch-path"
+            d="M 16 28 L 52 18 L 78 52 L 110 30 L 96 78 L 60 70 L 40 110 L 88 122 L 124 95"
+            fill="none" stroke="#A8174A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            stroke-dasharray="520" stroke-dashoffset="520"></path>
+          <circle cx="16"  cy="28"  r="5"   fill="#A8174A"></circle>
+          <circle cx="52"  cy="18"  r="3"   fill="#C2305C"></circle>
+          <circle cx="78"  cy="52"  r="6"   fill="#5C6225"></circle>
+          <circle cx="110" cy="30"  r="3.5" fill="#C2305C"></circle>
+          <circle cx="96"  cy="78"  r="4.5" fill="#A8174A"></circle>
+          <circle cx="60"  cy="70"  r="3"   fill="#5C6225"></circle>
+          <circle cx="40"  cy="110" r="5"   fill="#C2305C"></circle>
+          <circle cx="88"  cy="122" r="3.5" fill="#A8174A"></circle>
+          <circle cx="124" cy="95"  r="4"   fill="#5C6225"></circle>
+        </svg>
+      </div>
+
+      <div class="hero-text">
+        <div class="hero-name"       id="hero-name"></div>
+        <div class="hero-identity"   id="hero-identity"></div>
+        <div class="hero-line"       id="hero-line"></div>
+        <div class="hero-keywords"   id="hero-keywords"></div>
+      </div>
+    </section>
+
+    <div class="rose-divider">
+      <div class="rule-line"></div>
+      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="section about-block">
+      <div class="section-eyebrow">About</div>
+      <div class="sub-eyebrow">What I do</div>
+      <p id="about-what"></p>
+      <div class="sub-eyebrow">My journey</div>
+      <p id="about-journey"></p>
+      <div class="sub-eyebrow">Off work</div>
+      <p id="about-offwork"></p>
+    </section>
+
+    <div class="rose-divider">
+      <div class="rule-line"></div>
+      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- Work -->
+    <section id="work" class="section">
+      <div class="section-eyebrow">Selected work</div>
+      <div class="case-list" id="case-list"></div>
+    </section>
+
+    <div class="rose-divider">
+      <div class="rule-line"></div>
+      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- Project -->
+    <section id="project" class="section">
+      <div class="section-eyebrow">Right now</div>
+      <div class="project-block">
+        <div class="project-label" id="project-label"></div>
+        <div class="project-title" id="project-title"></div>
+        <div class="project-desc"  id="project-desc"></div>
+      </div>
+    </section>
+
+    <div class="rose-divider">
+      <div class="rule-line"></div>
+      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- Footer -->
+    <section id="contact" class="footer">
+      <div class="footer-links">
+        <a id="footer-email"    href="#">Email</a>
+        <a id="footer-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-note" id="footer-note"></div>
+    </section>
+
+  </div>
+
+  <!-- Side nav -->
+  <nav class="side-nav" aria-label="Page sections">
+    <div class="side-nav-inner">
+      <a href="#top"     data-target="top"     class="current">Top</a>
+      <a href="#about"   data-target="about">About</a>
+      <a href="#work"    data-target="work">Work</a>
+      <a href="#project" data-target="project">Project</a>
+      <a href="#contact" data-target="contact">Contact</a>
+    </div>
+  </nav>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-image" id="modal-image">image or diagram</div>
+    <div class="modal-body">
+      <div class="modal-title"   id="modal-title"></div>
+      <div class="modal-context" id="modal-context"></div>
+      <div class="modal-outcome" id="modal-outcome"></div>
+      <ul  class="modal-details" id="modal-details"></ul>
+      <div class="modal-tags"    id="modal-tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Content: edit this file to update all copy -->
+<script src="js/content.js"></script>
+
+<!-- App logic: do not edit -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
