@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Render footer ──────────────────────────────────── */
 document.getElementById('contact-email').href       = 'mailto:' + c.contact.email;
   document.getElementById('contact-linkedin').href    = c.contact.linkedin;
+  document.getElementById('contact-github').href      = c.contact.github;
   document.getElementById('contact-note').textContent =
     c.contact.location + ' · ' + c.contact.status;
 

@@ -94,6 +94,7 @@ const CONTENT = {
   contact: {
     email:    "kelly.m.miller0@gmail.com",
     linkedin: "https://www.linkedin.com/in/kelmariemiller/",
+    github:   "https://github.com/KellyMillerBerlin",
     location: "Portland, Oregon",
     status:   "open to remote",
   },
