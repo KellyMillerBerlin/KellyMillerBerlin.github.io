@@ -19,6 +19,16 @@
 </head>
 <body>
 
+<!-- Mobile sticky nav -->
+<nav class="top-nav" aria-label="Page sections">
+  <div class="top-nav-inner">
+    <a href="#top"     data-target="top"     class="current">Top</a>
+    <a href="#about"   data-target="about">About</a>
+    <a href="#work"    data-target="work">Work</a>
+    <a href="#contact" data-target="contact">Contact</a>
+  </div>
+</nav>
+
 <div class="layout-wrap">
 
   <!-- Main content -->
@@ -56,7 +66,7 @@
 
     <div class="rose-divider">
       <div class="rule-line"></div>
-      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <img src="assets/images/rose-divider.png" alt="" aria-hidden="true">
       <div class="rule-line"></div>
     </div>
 
@@ -73,7 +83,7 @@
 
     <div class="rose-divider">
       <div class="rule-line"></div>
-      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <img src="assets/images/rose-divider.png" alt="" aria-hidden="true">
       <div class="rule-line"></div>
     </div>
 
@@ -85,7 +95,7 @@
 
     <div class="rose-divider">
       <div class="rule-line"></div>
-      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <img src="assets/images/rose-divider.png" alt="" aria-hidden="true">
       <div class="rule-line"></div>
     </div>
 
@@ -101,18 +111,22 @@
 
     <div class="rose-divider">
       <div class="rule-line"></div>
-      <img src="assets/images/rose-divider.png" height="48" alt="" aria-hidden="true">
+      <img src="assets/images/rose-divider.png" alt="" aria-hidden="true">
       <div class="rule-line"></div>
     </div>
 
-    <!-- Footer -->
-    <section id="contact" class="footer">
-      <div class="footer-links">
-        <a id="footer-email"    href="#">Email</a>
-        <a id="footer-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section-eyebrow">Contact</div>
+      <div class="contact-block">
+    <div class="contact-links">
+          <a id="contact-email" href="#">Email</a>
+          <a id="contact-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="contact-note" id="contact-note"></div>
       </div>
-      <div class="footer-note" id="footer-note"></div>
     </section>
+
 
   </div>
 
@@ -122,7 +136,6 @@
       <a href="#top"     data-target="top"     class="current">Top</a>
       <a href="#about"   data-target="about">About</a>
       <a href="#work"    data-target="work">Work</a>
-      <a href="#project" data-target="project">Project</a>
       <a href="#contact" data-target="contact">Contact</a>
     </div>
   </nav>

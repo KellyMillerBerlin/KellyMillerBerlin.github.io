@@ -34,8 +34,6 @@ const CONTENT = {
     cases: [
       {
         title:   "Standing up a cross-team delivery model",
-        org:     "Mission Asset Fund",
-        role:    "Senior Technical Program Manager",
         outcome: "When I joined the team, there was no central system for planning, tracking, or shipping work: features and bugs moved through competing priorities with no QA process or deployment procedure. In a few months, I built the delivery infrastructure from scratch, turning ad hoc tickets into a system the whole org could rely on.",
         details: [
           "Stood up an end-to-end agile process in Jira and GitLab and built the scaffolding for cross-team needs-finding and release planning.",
@@ -48,8 +46,6 @@ const CONTENT = {
       },
       {
         title:   "Untangling a stalled platform migration",
-        org:     "Mission Asset Fund",
-        role:    "Technical Product Manager",
         outcome: "A migration and redesign of a flagship program had been stalled for five years, stuck on competing opinions about what to solve first and the sheer complexity of the roll-out. We went from stalled to green-lit in three months, shipped within a year, and the migration now serves 10,000+ users annually across four teams, including external B2B partners.",
         details: [
           "Aligned four teams on which problems were actually worth solving after five years of stalled consensus.",
@@ -62,8 +58,6 @@ const CONTENT = {
       },
       {
         title:   "Crafting an operational tracker from scratch",
-        org:     "Mission Asset Fund",
-        role:    "Technical Product Manager",
         outcome: "Enrollment in a mission-critical program once depended on a cumbersome, manual process for forming lending groups. I built a tool that takes the mental load off managing phone calls, note-taking, shuffling locations and group sizes, then tracking no-shows and roll-overs. Despite reduced resources and competing priorities, enrollment goals for these groups are now hit with significantly less effort.",
         details: [
           "Spent months researching business, staff, and user needs before proposing a solution, working within existing tooling constraints.",
@@ -76,8 +70,6 @@ const CONTENT = {
       },
       {
         title:   "Building accurate means-testing at scale",
-        org:     "Mission Asset Fund",
-        role:    "Technical Product Manager",
         outcome: "A national program needed to determine eligibility segments accurately and at scale, based on various self-reported inputs. I helped to design and roll out a screening process that respected both applicants' time and privacy and staff judgment. After demonstrated success, I upgraded the underlying data infrastructure and institutionalized the model across programs.",
         details: [
           "Co-designed a combination of automatic and human-led eligibility checks based on self-reported attributes and survey responses.",
@@ -103,7 +95,7 @@ const CONTENT = {
     email:    "kelly.m.miller0@gmail.com",
     linkedin: "https://www.linkedin.com/in/kelmariemiller/",
     location: "Portland, Oregon",
-    status:   "Remote preferred",
+    status:   "open to remote",
   },
 
 };

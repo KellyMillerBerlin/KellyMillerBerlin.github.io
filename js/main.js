@@ -77,16 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('project-desc').textContent  = c.project.desc;
 
   /* ── Render footer ──────────────────────────────────── */
-  document.getElementById('footer-email').href        = 'mailto:' + c.contact.email;
-  document.getElementById('footer-linkedin').href     = c.contact.linkedin;
-  document.getElementById('footer-note').textContent  =
+document.getElementById('contact-email').href       = 'mailto:' + c.contact.email;
+  document.getElementById('contact-linkedin').href    = c.contact.linkedin;
+  document.getElementById('contact-note').textContent =
     c.contact.location + ' · ' + c.contact.status;
 
   /* ── Scroll-spy nav ─────────────────────────────────── */
-  const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
-  const sections = navLinks.map(function (a) {
-    return document.getElementById(a.dataset.target);
-  });
+  const navLinks = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'));
+  const sections = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'))
+    .filter(function (a, i, arr) {
+      return arr.findIndex(function (b) { return b.dataset.target === a.dataset.target; }) === i;
+    })
+    .map(function (a) { return document.getElementById(a.dataset.target); });
 
   navLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -99,12 +101,19 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateActiveSection() {
     var current = sections[0];
     var scrollY = window.scrollY + 140;
-    sections.forEach(function (sec) {
-      if (sec && sec.offsetTop <= scrollY) current = sec;
-    });
+    // Near-bottom detection: if within 80px of page bottom, force last section active
+    var atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 80);
+    if (atBottom) {
+      current = sections[sections.length - 1];
+    } else {
+      sections.forEach(function (sec) {
+        if (sec && sec.offsetTop <= scrollY) current = sec;
+      });
+    }
     navLinks.forEach(function (l) { l.classList.remove('current'); });
-    var match = navLinks.find(function (l) { return l.dataset.target === current.id; });
-    if (match) match.classList.add('current');
+    navLinks.forEach(function (l) {
+      if (l.dataset.target === current.id) l.classList.add('current');
+    });
   }
 
   window.addEventListener('scroll', updateActiveSection, { passive: true });
