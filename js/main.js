@@ -71,10 +71,20 @@ document.addEventListener('DOMContentLoaded', function () {
     caseList.appendChild(card);
   });
 
-  /* ── Render project ─────────────────────────────────── */
-  document.getElementById('project-label').textContent = c.project.label;
-  document.getElementById('project-title').textContent = c.project.title;
-  document.getElementById('project-desc').textContent  = c.project.desc;
+  /* ── Render posts ───────────────────────────────────── */
+  document.getElementById('project-label').textContent = c.posts.label;
+  document.getElementById('project-intro').textContent = c.posts.intro;
+  var postList = document.getElementById('post-list');
+  c.posts.items.forEach(function (post) {
+    var a = document.createElement('a');
+    a.href = post.slug;
+    a.className = 'post-item';
+    a.innerHTML =
+      '<span class="post-title">' + post.title + '</span>' +
+      '<span class="post-meta">' + post.date + '</span>' +
+      '<span class="post-summary">' + post.summary + '</span>';
+    postList.appendChild(a);
+  });
 
   /* ── Render footer ──────────────────────────────────── */
 document.getElementById('contact-email').href       = 'mailto:' + c.contact.email;

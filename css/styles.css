@@ -308,15 +308,50 @@ body {
   font-weight: 600;
 }
 
-.project-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--accent-2);
-  font-size: 24px;
-  margin-bottom: 10px;
+.project-intro {
+  font-size: 17px;
+  max-width: 500px;
+  color: var(--text);
+  margin-bottom: 20px;
 }
 
-.project-desc { font-size: 17px; max-width: 500px; color: var(--text); }
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-decoration: none;
+  padding: 14px 18px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.post-item:hover { border-color: var(--accent-1); }
+
+.post-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent-2);
+}
+
+.post-meta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.post-summary {
+  font-size: 15px;
+  color: var(--text);
+  margin-top: 4px;
+}
 
 /* ── Contact section ────────────────────────────────────── */
 .contact-block { max-width: 480px; }

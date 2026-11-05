@@ -83,11 +83,18 @@ const CONTENT = {
     ],
   },
 
-  /* ── Civic tech project ───────────────────────────────── */
-  project: {
+  /* ── Building in public posts ─────────────────────────── */
+  posts: {
     label: "Building in public",
-    title: "Service design in my own community",
-    desc:  "I'm running a service design process in my own community, using embedded research to find a real problem before reaching for a technology fix. I'm especially drawn to how public infrastructure and services can make the work of parenting easier.",
+    intro: "I'm running a service design process in my own community, using embedded research to find a real problem before reaching for a technology fix.",
+    items: [
+      {
+        title:   "Exploring the problem of Portland parks",
+        date:    "November 2026",
+        slug:    "posts/portland-parks.html",
+        summary: "A time-boxed research scan on whether Portland parks had problems worth solving — and what I found instead.",
+      },
+    ],
   },
 
   /* ── Footer / contact ─────────────────────────────────── */
