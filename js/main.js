@@ -93,42 +93,52 @@ document.getElementById('contact-email').href       = 'mailto:' + c.contact.emai
   document.getElementById('contact-note').textContent =
     c.contact.location + ' · ' + c.contact.status;
 
-  /* ── Scroll-spy nav ─────────────────────────────────── */
-  const navLinks = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'));
-  const sections = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'))
-    .filter(function (a, i, arr) {
-      return arr.findIndex(function (b) { return b.dataset.target === a.dataset.target; }) === i;
-    })
-    .map(function (a) { return document.getElementById(a.dataset.target); });
+/* ── Scroll-spy nav ─────────────────────────────────── */
+const navLinks = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'));
+const sections = Array.from(document.querySelectorAll('.side-nav a, .top-nav a'))
+  .filter(function (a, i, arr) {
+    return arr.findIndex(function (b) { return b.dataset.target === a.dataset.target; }) === i;
+  })
+  .map(function (a) { return document.getElementById(a.dataset.target); });
 
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.getElementById(link.dataset.target)
-        .scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+// Sections scroll-spy watches — everything except contact
+var spySections = sections.slice(0, sections.length - 1);
 
-  function updateActiveSection() {
-    var current = sections[0];
-    var scrollY = window.scrollY + 140;
-    // Near-bottom detection: if within 80px of page bottom, force last section active
-    var atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 80);
-    if (atBottom) {
-      current = sections[sections.length - 1];
-    } else {
-      sections.forEach(function (sec) {
-        if (sec && sec.offsetTop <= scrollY) current = sec;
-      });
-    }
+var clickActive = false;
+var clickTimer = null;
+
+navLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    // Click wins immediately
     navLinks.forEach(function (l) { l.classList.remove('current'); });
     navLinks.forEach(function (l) {
-      if (l.dataset.target === current.id) l.classList.add('current');
+      if (l.dataset.target === link.dataset.target) l.classList.add('current');
     });
-  }
+    // Suppress scroll-spy briefly so the click highlight isn't overridden
+    clickActive = true;
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(function () { clickActive = false; }, 1000);
+    document.getElementById(link.dataset.target)
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
-  window.addEventListener('scroll', updateActiveSection, { passive: true });
-  updateActiveSection();
+function updateActiveSection() {
+  if (clickActive) return;
+  var scrollY = window.scrollY + 200;
+  var current = spySections[0];
+  spySections.forEach(function (sec) {
+    if (sec && sec.offsetTop <= scrollY) current = sec;
+  });
+  navLinks.forEach(function (l) { l.classList.remove('current'); });
+  navLinks.forEach(function (l) {
+    if (l.dataset.target === current.id) l.classList.add('current');
+  });
+}
+
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+updateActiveSection();
 
   /* ── Hero dot animation ─────────────────────────────── */
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
